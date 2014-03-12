@@ -195,21 +195,22 @@ nnoremap <silent> <F8> :Unite neobundle/update -log -wrap -auto-quit<CR>
 " ---------------
 if ! has("gui_running")
     set t_Co=256
-    set guifont=monospace\ 12
+    colorscheme blackboard
+    set guifont=monospace\ 10
+    set background=dark
 else
     " disable menu/ect
     set guioptions=aci
+    colorscheme solarized
+    set background=dark
     " Cursor preferences
-    set guifont=Anonymous\ Pro\ 12
+    set guifont=Anonymous\ Pro\ 11
     " set guicursor=n-v-c:block-Cursor
     " set guicursor+=o:hor50-Cursor
     " set guicursor+=i-r:ver15-iCursor
     " set guicursor+=a:blinkwait700-blinkon700-blinkoff700
 endif
 
-" colorscheme solarized
-colorscheme blackboard
-set background=dark
 
 " python.vim-vasiliev options
 let python_highlight_space_errors=1
