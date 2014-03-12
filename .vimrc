@@ -478,6 +478,13 @@ nnoremap <space>s :Unite -quick-match buffer<cr>
 " {{
 " let NERDTreeMinimalUI = 1
 nmap <C-o> :NERDTreeToggle<CR>
+"GUI SETTINGS
+nmap <Leader>ll :set background=light<CR>
+nmap <Leader>kk :set background=dark<CR>
+nmap <Leader>jj :colorscheme solarized<CR>
+nmap <Leader>hh :colorscheme blackboard<CR>
+
+    
 nmap <Leader>sit :NERDTreeFind
 " " }}
 
