@@ -472,6 +472,14 @@ nnoremap <space>/ :Unite grep:.<cr>
 nnoremap <space>y :Unite history/yank<cr>
 nnoremap <space>s :Unite -quick-match buffer<cr>
 
+
+" Bundle 'scrooloose/nerdtree'
+" {{
+" let NERDTreeMinimalUI = 1
+nmap <C-o> :NERDTreeToggle<CR>
+nmap <Leader>sit :NERDTreeFind
+" " }}
+
 " git/fugitive
 nmap <Leader>gs :Gstatus<CR>
 nmap <Leader>gc :Gcommit<CR>
