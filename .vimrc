@@ -501,8 +501,8 @@ nnoremap <silent> <F6> :Complexity<CR>
 " errors
 " map <F12> :w<CR>:Errors<CR>
 " imap <F12> <ESC>:w<CR>:Errors<CR>
-map <F12> :PyLint<CR>
-map <S-F12> :PyLintAuto<CR>
+map <F12> :PymodeLint<CR>
+map <S-F12> :PymodeLintAuto<CR>
 
 "map <C-F12> :w<CR>:ToggleErrors<CR>
 "imap <C-F12> <ESC>:w<CR>:ToggleErrors<CR>
