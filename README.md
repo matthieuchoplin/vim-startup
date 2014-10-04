@@ -19,7 +19,7 @@ Installation
 To full work you need installed:
 
  * vim or vim-gtk
- * exuberant-ctags
+ * sudo apt-get install exuberant-ctags
  * for good python syntax checking install 'sudo easy_install flake8'
 
 ```bash
