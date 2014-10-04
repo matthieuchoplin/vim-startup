@@ -29,7 +29,7 @@ let g:syntastic_auto_loc_list=2
 let g:syntastic_enable_balloons = 1
 let g:syntastic_auto_jump=0
 let g:syntastic_loc_list_height=6
-let g:syntastic_quiet_warnings=0
+let g:syntastic_quiet_messages = {'level': 'warnings'}
 let g:syntastic_python_checkers=['flake8']
 let g:syntastic_python_flake8_args='--ignore=E128,E501,E127'
 
@@ -125,13 +125,13 @@ NeoBundle 'Conque-Shell'
 
 NeoBundle 'davidhalter/jedi-vim'
 let g:jedi#auto_initialization = 1
-let g:jedi#goto_command = "<leader>g"
-let g:jedi#get_definition_command = "<leader>d"
+let g:jedi#goto_assignments_command
+let g:jedi#goto_definitions_command
 let g:jedi#use_tabs_not_buffers = 0
 let g:jedi#popup_on_dot = 0
 let g:jedi#rename_command = "<leader>r"
-let g:jedi#related_names_command = "<leader>n"
-let g:jedi#show_function_definition = "0"
+let g:jedi#usages_command
+let g:jedi#show_call_signatures
 
 NeoBundle 'nathanaelkane/vim-indent-guides'
 
@@ -195,22 +195,21 @@ nnoremap <silent> <F8> :Unite neobundle/update -log -wrap -auto-quit<CR>
 " ---------------
 if ! has("gui_running")
     set t_Co=256
-    colorscheme blackboard
-    set guifont=monospace\ 10
-    set background=dark
+    set guifont=monospace\ 12
 else
     " disable menu/ect
     set guioptions=aci
-    colorscheme solarized
-    set background=dark
     " Cursor preferences
-    set guifont=Anonymous\ Pro\ 11
+    set guifont=Anonymous\ Pro\ 12
     " set guicursor=n-v-c:block-Cursor
     " set guicursor+=o:hor50-Cursor
     " set guicursor+=i-r:ver15-iCursor
     " set guicursor+=a:blinkwait700-blinkon700-blinkoff700
 endif
 
+" colorscheme solarized
+colorscheme blackboard
+set background=dark
 
 " python.vim-vasiliev options
 let python_highlight_space_errors=1
@@ -473,21 +472,6 @@ nnoremap <space>/ :Unite grep:.<cr>
 nnoremap <space>y :Unite history/yank<cr>
 nnoremap <space>s :Unite -quick-match buffer<cr>
 
-
-" Bundle 'scrooloose/nerdtree'
-" {{
-" let NERDTreeMinimalUI = 1
-nmap <C-o> :NERDTreeToggle<CR>
-"GUI SETTINGS
-nmap <Leader>ll :set background=light<CR>
-nmap <Leader>kk :set background=dark<CR>
-nmap <Leader>jj :colorscheme solarized<CR>
-nmap <Leader>hh :colorscheme blackboard<CR>
-
-    
-nmap <Leader>sit :NERDTreeFind
-" " }}
-
 " git/fugitive
 nmap <Leader>gs :Gstatus<CR>
 nmap <Leader>gc :Gcommit<CR>
@@ -517,8 +501,8 @@ nnoremap <silent> <F6> :Complexity<CR>
 " errors
 " map <F12> :w<CR>:Errors<CR>
 " imap <F12> <ESC>:w<CR>:Errors<CR>
-map <F12> :PymodeLint<CR>
-map <S-F12> :PymodeLintAuto<CR>
+map <F12> :PyLint<CR>
+map <S-F12> :PyLintAuto<CR>
 
 "map <C-F12> :w<CR>:ToggleErrors<CR>
 "imap <C-F12> <ESC>:w<CR>:ToggleErrors<CR>
